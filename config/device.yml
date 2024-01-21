@@ -1,0 +1,54 @@
+# ***弃用***
+# 记录设备基础信息
+Reolink Argus 2E:
+  battery_type: 2
+  wifi_type: 2
+  preview_mode:
+    - 清晰
+    - 流畅
+  playback_mode:
+    - 清晰
+    - 流畅
+  upnp: false
+  uid_off: false
+  ddns: false
+  ntp: false
+  manual_update: false
+  auto_update: true
+  manual_timeset: false
+
+E1 Pro:
+  battery_type: 0
+  wifi_type: 3
+  preview_mode:
+    - 清晰
+    - 标准
+    - 流畅
+  playback_mode:
+    - 清晰
+    - 流畅
+  upnp: true
+  uid_off: true
+  ddns: true
+  ntp: true
+  manual_update: true
+  auto_update: false
+  manual_timeset: true
+
+RLC-824A:
+  battery_type: 0
+  wifi_type: 1
+  preview_mode:
+    - 清晰
+    - 标准
+    - 流畅
+  playback_mode:
+    - 清晰
+    - 流畅
+  upnp: true
+  uid_off: true
+  ddns: true
+  ntp: true
+  manual_update: true
+  auto_update: true
+  manual_timeset: true

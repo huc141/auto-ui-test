@@ -1,0 +1,37 @@
+# 全局配置存放位置
+# 客户端配置目录 拉取代码后需更新此处
+app_data_dir: "C:/Users/Admin/AppData/Roaming/reolink"
+# 客户端可执行文件位置 拉取代码后需更新此处
+executable_path: "F:/Reolink Setup 8.10.0-pre-3/Reolink.exe"
+# 客户端内核版本
+chromium_version: 104.0.5112.79
+# 单位:秒
+script_timeout: 300
+# 语言 zh_CN|en_US
+lang: zh_CN
+# 平台，可选项 Win32|MacOS
+platform: Win32
+# 检查设备类型api
+device_type_api: https://apis.reolink.com/v1.0/devices/${uid}/profile/
+# 模式 debug|test|release
+mode: debug
+# 环境 production|sandbox|develop
+env: develop
+# 每次执行完pyautogui函数后的停顿时间，单位: 秒
+pyautogui.PAUSE: 1
+# 执行完用例是否自动关闭客户端
+auto_quit_by_end: true
+# 用例重试次数全局配置
+case_retry_times: 1
+# 客户端版本
+client_version: v8.10.0-pre-3
+# 日志级别 NOTEST|DEBUG|INFO|WARN|ERROR|CRITICAL
+log_level: INFO
+# 自动生成测试报告 allure|html|all
+auto_generate_report: all
+# 测试执行完后自动打开报告，仅支持打开allure报告
+open_report_by_end: true
+# 全局元素等待时间(秒): 默认为5s 
+element_timeout: 5
+# 禁用FAILSAFE
+pyautogui.FAILSAFE: false

@@ -1,0 +1,80 @@
+test_primary_case:
+  test_dl_clip_case:
+    name: "RLC-824A"
+    start: "00:02:03"
+    end: "23:13:14"
+    num: 2
+    sort: "old"
+    stream_mode: "流畅"
+
+  test_manual_update_case:
+    name: "E1 Pro"
+    patch_path: "D:\\update-patches\\IPC_513SD5.716_22102412.E1-Pro.ov4689.4MP.WIFI1021.PT.REOLINK.pak"
+    conf_reset: false
+    fw_version: "v3.0.0.716_21112404"
+
+  test_static_ip_case:
+    name: "E1 Pro"
+    netinfo:
+      {
+        link_type: "静态",
+        ip: "192.168.6.45",
+        dns_type: "静态DNS",
+        uname: "admin",
+        passwd: "111111",
+        mask: "255.255.254.0",
+        gateway: "192.168.6.1",
+        primary_dns: "192.168.6.1",
+        alternative_dns: "1.1.1.1",
+      }
+  test_dhcp_case:
+    name: "E1 Pro"
+    netinfo:
+      {
+        link_type: "DHCP",
+        dns_type: "自动获取DNS",
+        uname: "admin",
+        passwd: "111111",
+      }
+
+  test_wifi_scan_case:
+    num: 5
+    name: "E1 Pro"
+    retries: 3
+
+  test_preview_case:
+    name: "RLC-824A"
+    duration: 5
+    action: 预览
+    skip_fail: True
+
+  test_maintain_case:
+    name: "E1 Pro"
+    datetime: "3-17:49:30"
+    wait: 120
+    verifications: { uname: "admin", passwd: "111111" }
+
+  test_login_case:
+    name: "E1 Pro"
+    unames:
+      - admin1
+      - admin
+      - admin2
+    passwds:
+      - "222222"
+      - "111111"
+      - "333333"
+
+  test_resolution_case:
+    name: "E1 Pro"
+    wait: 60
+    skip_fail: True
+
+  test_reset_factory_case:
+    name: "E1 Pro"
+    validation:
+      new_name: "E1 Pro pro"
+      new_passwd: "111111"
+      uid: "952700Y000I91PY2"
+      mac: "ec:71:db:6d:fb:88"
+    wait: 60
