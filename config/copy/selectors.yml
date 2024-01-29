@@ -1,11 +1,11 @@
 # 主窗口
 main_window:
-  _add_device_selector: "#device-list-id > div.device-list-box > div.title-box.flex-between > div:nth-child(3) > span"
+  _add_device_selector: "#device-list-id > div > div.title-box.flex-between > div"
   _device_list_selector: "#device-list-id > div > div.list-box > div > ul > li.list-item"
-  _device_list_item_name: ".device-name.allow-events-item.small-title"
+  _device_list_item_name: ".device-name.allow-events.small-title"
   _device_btn_selector: "ul.device-settings > li > div.cell-inner"
   _device_list_item_status: ".state-text"
-  _device_card_selector: "div > div.device-wrap > div.device-wrap-background.allow-events-item"
+  _device_card_selector: "div > div.device-wrap > div.device-wrap-background.allow-events"
   _split_screen_btn: "//*[@id='live_tab']/ul/ul/li[2]/div"
   _split_screen_divide_1: "//*[@id='live_tab']/ul/ul/div/ul[2]/li[12]"
   _grab_pic_btn: "//*[@id='live_tab']/div/ul/li/div/div[contains(@class, 'overlays-wrap')]/div[contains(@class, 'camera-func-btn-group-wrap')]/div[@title='抓拍']"

@@ -12,13 +12,9 @@ class BaseWF(BaseWindow):
         self._main_window = MainWindow(self._driver)
         # self._logger = Logger()
 
-    def awake_device_by_need(
-            self,
-            name: str = None
-    ) -> None:
+    def awake_device_by_need(self, name: str = None) -> None:
         """
             在需要的时候唤醒设备
-
             参数:
                 - name: 待唤醒的设备, 默认唤醒全部设备
         """

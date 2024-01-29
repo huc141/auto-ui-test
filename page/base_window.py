@@ -9,6 +9,7 @@ from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
+# from selenium import webdriver
 import pyautogui as pg
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
@@ -48,20 +49,24 @@ class BaseWindow:
 
         return self._driver.title
 
+    # 该方法用于等待直到满足某个条件
     def wait_until(
             self,
-            fn: Callable,
-            element: WebElement,
-            timeout: int,
-            period: float,
-            wait_attr: str = None,
-            allow_null: bool = False
+            fn: Callable,   # Callable是一个类型提示，用于表示一个对象是可调用的。可以是函数、方法、类或其他任何可调用的对象。fn: Callable 表示参数 fn 应该是一个可调用的对象。这个函数期望一个可调用的函数或方法，并在等待的过程中多次调用它，直到满足某个条件或超时。
+            element: WebElement,  # element 参数是一个 WebElement 对象，表示要在其上执行 fn 检查
+            timeout: int,  # 表示最长等待时间（秒）
+            period: float,  # 表示轮询间隔时间（秒）
+            wait_attr: str = None,  # 表示等待的条件属性，例如 'text', 'visible' 或其他属性
+            allow_null: bool = False  # 如果为 True，则即使属性为空，也将被视为满足条件
     ) -> WebElement:
-
+        # 获取当前时间，并计算最后期限
         end_time = time.monotonic() + timeout
         err_msg = None
         while True:
             try:
+                # value = fn(element or self._driver) 这行代码使用了一个短路逻辑的写法。在Python中，or 操作符返回其第一个为真的值。
+                # 如果 element 为真（即不为 None 或者 False），则 fn(element) 就会被调用；否则，self._driver 会被传递给 fn 函数。
+                # 这样的写法在确保有一个有效的 element 变量时使用，否则使用默认的 self._driver。
                 value = fn(element or self._driver)
                 if value:
                     if wait_attr:
@@ -83,6 +88,54 @@ class BaseWindow:
             if time.monotonic() > end_time:
                 err_msg = f"{common.I18n['_error_msg']['_element_timeout']}"
                 break
+        raise TimeoutException(
+            f"{common.I18n['_error_msg']['_element_not_found']}: {err_msg}"
+        )
+
+    def wait_until_2(
+            self,
+            fn: Callable,
+            element: WebElement,
+            timeout: int,
+            period: float,
+            wait_attr: str = None,
+            allow_null: bool = False
+    ) -> WebElement:
+
+        end_time = time.monotonic() + timeout
+        err_msg = None
+
+        while True:
+            try:
+                if element:
+                    value = fn(element)
+                else:
+                    value = fn(self._driver)
+
+                if value:
+                    if wait_attr:
+                        if wait_attr == 'text':
+                            if value.text or allow_null:
+                                return value
+                        elif wait_attr == 'visible' or allow_null:
+                            if value.is_displayed():
+                                return value
+                        else:
+                            if value.get_attribute(wait_attr) or allow_null:
+                                return value
+
+                        raise ValueError(f"{wait_attr} not available")
+
+                    return value
+            except BaseException as err:
+                err_msg = err
+
+            time.sleep(period)
+
+            if time.monotonic() > end_time:
+                err_msg = f"{common.I18n['_error_msg']['_element_timeout']}"
+                break
+
         raise TimeoutException(
             f"{common.I18n['_error_msg']['_element_not_found']}: {err_msg}"
         )
@@ -135,7 +188,6 @@ class BaseWindow:
     ) -> WebElement:
         """
             查找符合选择器条件元素集合
-
             参数:
                 - selector: 选择器路径
                 - by: 选择器类型, 可选 By.XPATH | By.CSS_SELECTOR, 默认 By.XPATH

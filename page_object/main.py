@@ -32,7 +32,7 @@ class MainWF(BaseWF):
         _logs = ''
         try:
             # 尝试唤醒设备
-            self.awake_device_by_need(name)
+            # self.awake_device_by_need(name)
             main_window = self._main_window
 
             if rm_device:
