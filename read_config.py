@@ -49,7 +49,6 @@ class Config(object):
                 - source: 参数源
                     - global(全局参数)[默认]
                     - case(用例参数)
-                    # - device(设备基础参数)
                     - selectors(选择器参数)
                 - tier: 层级, 默认取与当前文件名一致的字段下的所有字段, 支持多层级
 

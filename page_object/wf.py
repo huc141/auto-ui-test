@@ -1,4 +1,8 @@
-from typing import List
+from typing import List, Literal
+
+from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.webelement import WebElement
+
 from page_object.main import MainWF
 from selenium.webdriver.remote.webdriver import WebDriver
 from driver import driver
@@ -38,6 +42,20 @@ class ReoWF(BaseWF):
                 - tuple: 正确执行操作返回`True`, 错误信息为空; 否则, 返回`False`与错误信息
         """
         return self._mainwf.attempt_login_by_device_uid(uid, name, unames, passwds, rm_device)
+
+    def click_add_device_button(
+            self,
+            selector: str,
+            by: Literal,
+            pause: float,
+            element: WebElement,
+            timeout: int,
+            period: float,
+            idtext: str
+    ):
+        return self._mainwf.click_on_element(selector, by)
+
+
 
 
 web_driver = driver.start()  # driver.start() 返回一个 WebDriver 对象。

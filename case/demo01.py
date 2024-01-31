@@ -1,3 +1,5 @@
+from selenium.webdriver.common.by import By
+
 from page_object.wf import Reo
 
 
@@ -13,3 +15,5 @@ def test_login_by_uid_case():
         # logger.error(error)
         assert False
     assert True
+
+

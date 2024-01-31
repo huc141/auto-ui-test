@@ -305,7 +305,7 @@ class AddDeviceWindow(BaseWindow):
         passwd: str,
         name: str
     ) -> tuple:
-        '''
+        """
             - 初始化设备密码
 
             参数:
@@ -315,7 +315,7 @@ class AddDeviceWindow(BaseWindow):
                 - (dict, str):
                     - 成功返回设备网络信息, 错误信息为空;
                     - 失败返回 `None` 和错误信息
-        '''
+        """
         try:
 
             self.input_text(
@@ -348,14 +348,14 @@ class AddDeviceWindow(BaseWindow):
             return False, str(err)
 
     def get_lan_devices(self) -> tuple:
-        '''
+        """
             返回局域网设备列表
 
             返回值:
                 - (List(str), str):
                     - devices:  局域网设备名称列表
                     - err: 如果发生异常, 返回错误描述, 否则为空
-        '''
+        """
         try:
             list = self.find_elements_by_selector(
                 selector=self._data['_device_list_selector'],

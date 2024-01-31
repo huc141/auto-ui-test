@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f28f42-921a-4337-b33f-4efd38308622" name="更改" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/config/copy/case.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/copy/device.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/copy/global.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/copy/selectors.yml" afterDir="false" />
+    <list default="true" id="36f28f42-921a-4337-b33f-4efd38308622" name="更改" comment="更新selectors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case/demo01.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/demo01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/global.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/global.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/selectors.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/selectors.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2pc_mem.txt" beforeDir="false" afterPath="$PROJECT_DIR$/p2pc_mem.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/add_device_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/page/add_device_window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/page/base_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/page/base_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/page/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_object/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_object/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_object/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_object/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page_object/wf.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_object/wf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/read_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +28,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -45,25 +42,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python 测试.demo01.test_login_by_uid_case 的 Python 测试.executor": "Run",
-    "Python.demo01.executor": "Run",
-    "Python.driver.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "F:/auto-ui-test/config/copy"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python 测试.demo01.test_click_add_device_button 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python 测试.demo01.test_login_by_uid_case 的 Python 测试.executor&quot;: &quot;Run&quot;,
+    &quot;Python.demo01.executor&quot;: &quot;Run&quot;,
+    &quot;Python.driver.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/auto-ui-test/config/copy&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\auto-ui-test\config\copy" />
       <recent name="F:\auto-ui-test\config" />
     </key>
   </component>
-  <component name="RunManager" selected="Python 测试.demo01.test_login_by_uid_case 的 Python 测试">
+  <component name="RunManager" selected="Python 测试.demo01.test_click_add_device_button 的 Python 测试">
     <configuration name="driver" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="auto-ui-test" />
       <option name="ENV_FILES" value="" />
@@ -86,6 +84,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="demo01.test_click_add_device_button 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="auto-ui-test" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;demo01.test_click_add_device_button&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="demo01.test_login_by_uid_case 的 Python 测试" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="auto-ui-test" />
       <option name="ENV_FILES" value="" />
@@ -103,6 +116,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python 测试.demo01.test_click_add_device_button 的 Python 测试" />
         <item itemvalue="Python 测试.demo01.test_login_by_uid_case 的 Python 测试" />
         <item itemvalue="Python.driver" />
       </list>
@@ -111,7 +125,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-7a29c1521ef0-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.11799.298" />
+        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
       </set>
     </attachedChunks>
   </component>
@@ -124,9 +138,20 @@
       <option name="presentableId" value="Default" />
       <updated>1705215923078</updated>
     </task>
+    <task id="LOCAL-00001" summary="更新selectors">
+      <option name="closed" value="true" />
+      <created>1706541135717</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706541135717</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="更新selectors" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新selectors" />
   </component>
 </project>

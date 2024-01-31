@@ -20,11 +20,18 @@ from utils.utils import util
 
 
 class BaseWindow:
-    _timeout = common.ENV['element_timeout']
+    _timeout = common.ENV['element_timeout']  # 设置元素查找的超时时间
 
-    _root_sel = "#remote-config-app > div.config-context-wrap > div"
+    _root_sel = "#remote-config-app > div.config-context-wrap > div"  # 设置根元素的CSS选择器
 
-    '''Record device status'''
+    '''
+    定义了一个名为 _device_statuses 的类变量，它是一个字典。这个字典的键是设备的状态，而对应的值是一个集合（set）
+    每个状态都有一个关联的集合，用于存储具有该状态的设备。这种数据结构的设计是为了方便对设备状态的管理。
+    在程序运行时，可以通过访问 _device_statuses 字典，根据不同的状态快速查找和管理设备。
+    
+    例如，如果想知道所有状态为 'ACTIVE' 的设备，只需访问 _device_statuses['ACTIVE']，
+    这将返回一个包含所有激活设备的集合。这种设计使得对设备状态的变更和检索都变得相对高效。
+    '''
     _device_statuses = {
         'ACTIVE': set(),
         'INACTIVE': set(),
@@ -34,11 +41,20 @@ class BaseWindow:
     }
 
     def __init__(self, driver: WebDriver, window_handle: str = '') -> None:
-
+        #  driver = webdriver.Chrome()
         self._driver = driver
 
-        pg.PAUSE = common.ENV['pyautogui.PAUSE'] if 'pyautogui.PAUSE' in common.ENV else 0.1
-        pg.FAILSAFE = common.ENV['pyautogui.FAILSAFE'] if 'pyautogui.FAILSAFE' in common.ENV else 0.1
+        # pg.PAUSE = common.ENV['pyautogui.PAUSE']if 'pyautogui.PAUSE' in common.ENV else 0.1
+        # pg.FAILSAFE = common.ENV['pyautogui.FAILSAFE'] if 'pyautogui.FAILSAFE' in common.ENV else 0.1
+        if common.ENV['pyautogui.PAUSE']:
+            pg.PAUSE = common.ENV['pyautogui.PAUSE']
+        else:
+            pg.PAUSE = 0.1
+
+        if common.ENV['pyautogui.FAILSAFE']:
+            pg.FAILSAFE = common.ENV['pyautogui.FAILSAFE']
+        else:
+            pg.FAILSAFE = 0.1
 
         if window_handle != '':
             self._driver.switch_to.window(window_handle)
@@ -210,7 +226,7 @@ class BaseWindow:
             self,
             selector: str = '.',
             by: Literal = By.XPATH,
-            pause: float = 0.5,
+            pause: float = 2.0,
             element: WebElement = None,
             timeout: int = _timeout,
             period: float = 0.25,
