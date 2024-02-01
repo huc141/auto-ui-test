@@ -12,8 +12,8 @@ class Config(object):
             Custom config should place in test/config and with yml or yaml suffix.
             Source are the same as config file name.
         """
-        os.chdir("..")
-        p = os.path.join(os.getcwd(), 'config')
+        # os.chdir("..")
+        p = os.path.join(os.getcwd(), 'test/config')
         for fname in os.listdir(p):
             # 如果文件的扩展名不是 'yml' 或 'yaml'，则跳过这个文件，不执行后续的处理。这个逻辑用于过滤掉不是 YAML 文件的内容，只处理 'config' 目录下的 YAML 文件。
             # fname.split('.')：这会将文件名（如 'example.yml'）按照点号分割成一个列表，即 ['example', 'yml']。

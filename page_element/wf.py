@@ -3,10 +3,10 @@ from typing import List, Literal
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 
-from page_object.main import MainWF
+from page_element.main import MainWF
 from selenium.webdriver.remote.webdriver import WebDriver
 from driver import driver
-from page_object.base import BaseWF
+from page_element.base import BaseWF
 
 
 class ReoWF(BaseWF):
@@ -54,8 +54,6 @@ class ReoWF(BaseWF):
             idtext: str
     ):
         return self._mainwf.click_on_element(selector, by)
-
-
 
 
 web_driver = driver.start()  # driver.start() 返回一个 WebDriver 对象。

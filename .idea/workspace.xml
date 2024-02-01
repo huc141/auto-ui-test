@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36f28f42-921a-4337-b33f-4efd38308622" name="更改" comment="更新selectors">
+    <list default="true" id="36f28f42-921a-4337-b33f-4efd38308622" name="更改" comment="添加注释">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/demo01.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/demo01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/selectors.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/selectors.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/add_device_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/page/add_device_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/base_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/page/base_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_object/wf.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_object/wf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/read_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,19 +37,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python 测试.demo01.test_click_add_device_button 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python 测试.demo01.test_login_by_uid_case 的 Python 测试.executor&quot;: &quot;Run&quot;,
-    &quot;Python.demo01.executor&quot;: &quot;Run&quot;,
-    &quot;Python.driver.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/auto-ui-test/config/copy&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python 测试.demo01.test_click_add_device_button 的 Python 测试.executor": "Run",
+    "Python 测试.demo01.test_login_by_uid_case 的 Python 测试.executor": "Run",
+    "Python.demo01.executor": "Run",
+    "Python.driver.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "F:/auto-ui-test"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\auto-ui-test\config\copy" />
@@ -105,7 +100,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -146,12 +141,21 @@
       <option name="project" value="LOCAL" />
       <updated>1706541135717</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加注释">
+      <option name="closed" value="true" />
+      <created>1706714245870</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706714245870</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="更新selectors" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新selectors" />
+    <MESSAGE value="添加注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加注释" />
   </component>
 </project>

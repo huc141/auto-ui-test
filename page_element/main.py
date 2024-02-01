@@ -1,5 +1,5 @@
 from typing import List
-from page_object.base import BaseWF
+from page_element.base import BaseWF
 from common import common
 
 
