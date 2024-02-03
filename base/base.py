@@ -1,7 +1,7 @@
 from selenium.webdriver.remote.webdriver import WebDriver
-from page.base_window import BaseWindow
+from base.base_window import BaseWindow
 from page.main_window import MainWindow
-from common import common
+from utils.common import common
 
 
 class BaseWF(BaseWindow):

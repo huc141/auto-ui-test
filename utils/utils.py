@@ -1,8 +1,8 @@
 import json
 import os
 from typing import Iterable, Union, Dict
-from common import common
-from read_config import config
+from utils.common import common
+from utils.read_config import config
 from PIL import Image
 from requests import get
 import av

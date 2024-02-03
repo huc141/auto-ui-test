@@ -1,6 +1,6 @@
 from typing import List
-from page_element.base import BaseWF
-from common import common
+from base.base import BaseWF
+from utils.common import common
 
 
 class MainWF(BaseWF):

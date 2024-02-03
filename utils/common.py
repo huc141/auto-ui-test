@@ -1,5 +1,5 @@
 from enum import Enum
-from read_config import config
+from utils.read_config import config
 import os
 
 

@@ -1,9 +1,9 @@
 """组合基础窗口提供的能力，提供操作主窗口元素的能力"""
 import time
 from typing import List
-from read_config import config
-from common import common
-from page.base_window import BaseWindow
+from utils.read_config import config
+from utils.common import common
+from base.base_window import BaseWindow
 from selenium.webdriver.common.by import By
 from page.add_device_window import AddDeviceWindow
 

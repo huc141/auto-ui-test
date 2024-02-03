@@ -13,7 +13,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 import pyautogui as pg
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
-from common import common
+from utils.common import common
 from utils.utils import util
 
 """基础窗口，所有窗口都继承自该窗口，提供了基础的页面操作能力"""

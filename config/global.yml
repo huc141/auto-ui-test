@@ -2,9 +2,9 @@
 # 客户端配置目录 拉取代码后需更新此处
 app_data_dir: "C:/Users/Admin/AppData/Roaming/reolink"
 # 客户端可执行文件位置 拉取代码后需更新此处
-executable_path: "F:/reolink_8.16.1_autoTest_siren_patch/Reolink.exe"
-# 客户端内核版本
-chromium_version: 104.0.5112.79
+executable_path: "F:/reolink_setup_8.15.5_test/Reolink.exe"
+# 客户端内核版本104.0.5112.79
+chromium_version: 104.0.5112.124
 # 单位:秒
 script_timeout: 300
 # 语言 zh_CN|en_US

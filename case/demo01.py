@@ -1,6 +1,4 @@
-from selenium.webdriver.common.by import By
-
-from page_element.wf import Reo
+from page.wf import Reo
 
 
 def test_login_by_uid_case():

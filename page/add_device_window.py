@@ -1,9 +1,8 @@
 from selenium.webdriver.common.by import By
-from .base_window import BaseWindow
-from read_config import config
-from common import common
+from base.base_window import BaseWindow
+from utils.read_config import config
+from utils.common import common
 from utils.utils import util
-from typing import Tuple
 
 
 class AddDeviceWindow(BaseWindow):

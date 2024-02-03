@@ -1,12 +1,11 @@
 from typing import List, Literal
 
-from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 
-from page_element.main import MainWF
+from base.main import MainWF
 from selenium.webdriver.remote.webdriver import WebDriver
-from driver import driver
-from page_element.base import BaseWF
+from utils.driver import driver
+from base.base import BaseWF
 
 
 class ReoWF(BaseWF):
