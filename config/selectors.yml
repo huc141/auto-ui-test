@@ -72,6 +72,8 @@ main_window:
   _watchpoint_update: "./button[2]"
   _watchpoint_auto: "./div[2]/div/div[contains(@class, 'slide-btn')]"
   _watchpoint_interval: "./div[3]/div[2]/div[1]/input"
+  _clear_all_devices: "#device-list-id > div > div.title-box.flex-between > div:nth-child(2)"
+  _clear_all_device_confirm_btn: "body > div > div > div > div:nth-child(2) > button"
 
   popup:
     _device_info_list: "/html/body/div/ul/child::li"

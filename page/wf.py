@@ -1,9 +1,8 @@
 from typing import List, Literal
-
 from selenium.webdriver.remote.webelement import WebElement
-
 from base.main import MainWF
 from selenium.webdriver.remote.webdriver import WebDriver
+from page.main_window import MainWindow
 from utils.driver import driver
 from base.base import BaseWF
 
@@ -16,6 +15,7 @@ class ReoWF(BaseWF):
     def __init__(self, driver: WebDriver, window_handle: str = '') -> None:
         super().__init__(driver, window_handle)
         self._mainwf = MainWF(self._driver)  # self._driver 是 BaseWindow 类的一个实例变量，它在该类的构造函数 __init__ 中被初始化。
+        self._mainwindow = MainWindow(self._driver)
 
     def attempt_login_by_device_uid(
             self,
@@ -42,17 +42,9 @@ class ReoWF(BaseWF):
         """
         return self._mainwf.attempt_login_by_device_uid(uid, name, unames, passwds, rm_device)
 
-    def click_add_device_button(
-            self,
-            selector: str,
-            by: Literal,
-            pause: float,
-            element: WebElement,
-            timeout: int,
-            period: float,
-            idtext: str
-    ):
-        return self._mainwf.click_on_element(selector, by)
+    def clear_all_devices(self):
+        """一键清除设备列表里的所有设备"""
+        return self._mainwindow.clear_all_devices()
 
 
 web_driver = driver.start()  # driver.start() 返回一个 WebDriver 对象。

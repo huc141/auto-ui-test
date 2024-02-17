@@ -21,7 +21,6 @@ from utils.utils import util
 
 class BaseWindow:
     _timeout = common.ENV['element_timeout']  # 设置元素查找的超时时间
-
     _root_sel = "#remote-config-app > div.config-context-wrap > div"  # 设置根元素的CSS选择器
 
     '''
@@ -41,11 +40,8 @@ class BaseWindow:
     }
 
     def __init__(self, driver: WebDriver, window_handle: str = '') -> None:
-        #  driver = webdriver.Chrome()
         self._driver = driver
 
-        # pg.PAUSE = common.ENV['pyautogui.PAUSE']if 'pyautogui.PAUSE' in common.ENV else 0.1
-        # pg.FAILSAFE = common.ENV['pyautogui.FAILSAFE'] if 'pyautogui.FAILSAFE' in common.ENV else 0.1
         if common.ENV['pyautogui.PAUSE']:
             pg.PAUSE = common.ENV['pyautogui.PAUSE']
         else:
@@ -62,13 +58,13 @@ class BaseWindow:
         # self._logger = logger
 
     def get_title(self) -> str:
-
         return self._driver.title
 
     # 该方法用于等待直到满足某个条件
     def wait_until(
             self,
-            fn: Callable,   # Callable是一个类型提示，用于表示一个对象是可调用的。可以是函数、方法、类或其他任何可调用的对象。fn: Callable 表示参数 fn 应该是一个可调用的对象。这个函数期望一个可调用的函数或方法，并在等待的过程中多次调用它，直到满足某个条件或超时。
+            fn: Callable,
+            # Callable是一个类型提示，用于表示一个对象是可调用的。可以是函数、方法、类或其他任何可调用的对象。fn: Callable 表示参数 fn 应该是一个可调用的对象。这个函数期望一个可调用的函数或方法，并在等待的过程中多次调用它，直到满足某个条件或超时。
             element: WebElement,  # element 参数是一个 WebElement 对象，表示要在其上执行 fn 检查
             timeout: int,  # 表示最长等待时间（秒）
             period: float,  # 表示轮询间隔时间（秒）
@@ -110,14 +106,14 @@ class BaseWindow:
 
     def wait_until_2(
             self,
-            fn: Callable,
+            fn: Callable,  # Callable是一个类型提示，用于表示一个对象是可调用的。可以是函数、方法、类或其他任何可调用的对象。fn: Callable 表示参数 fn 应该是一个可调用的对象。这个函数期望一个可调用的函数或方法，并在等待的过程中多次调用它，直到满足某个条件或超时。
             element: WebElement,
             timeout: int,
             period: float,
             wait_attr: str = None,
             allow_null: bool = False
     ) -> WebElement:
-
+        # 获取当前时间，并计算最后期限
         end_time = time.monotonic() + timeout
         err_msg = None
 
@@ -139,9 +135,7 @@ class BaseWindow:
                         else:
                             if value.get_attribute(wait_attr) or allow_null:
                                 return value
-
                         raise ValueError(f"{wait_attr} not available")
-
                     return value
             except BaseException as err:
                 err_msg = err
@@ -151,11 +145,11 @@ class BaseWindow:
             if time.monotonic() > end_time:
                 err_msg = f"{common.I18n['_error_msg']['_element_timeout']}"
                 break
-
         raise TimeoutException(
             f"{common.I18n['_error_msg']['_element_not_found']}: {err_msg}"
         )
 
+    # 使用 wd.find_element (注意少了一个s) 方法， 就只会返回 第一个 元素。
     def find_element_by_selector(
             self,
             selector: str,
@@ -182,7 +176,7 @@ class BaseWindow:
             返回值:
                 - WebElement: 查找到的元素
         """
-        ret = self.wait_until(
+        ret = self.wait_until_2(
             fn=lambda x: x.find_element(by, selector),
             element=element,
             timeout=timeout,
@@ -194,6 +188,7 @@ class BaseWindow:
             time.sleep(pause)
         return ret
 
+    # find_elements 返回的是找到的符合条件的 所有 元素， 放在一个 列表 中返回。
     def find_elements_by_selector(
             self,
             selector: str,
@@ -203,7 +198,7 @@ class BaseWindow:
             period: float = 0.25
     ) -> WebElement:
         """
-            查找符合选择器条件元素集合
+            查找符合选择器条件的 元素集合
             参数:
                 - selector: 选择器路径
                 - by: 选择器类型, 可选 By.XPATH | By.CSS_SELECTOR, 默认 By.XPATH
@@ -214,9 +209,8 @@ class BaseWindow:
             返回值:
                 - List[WebElement]: 查找到的元素集合
         """
-
-        return self.wait_until(
-            fn=lambda x: x.find_elements(by, selector),
+        return self.wait_until_2(
+            fn=lambda x: x.find_elements(by, selector),  # x: 这个参数是 find_elements 方法的调用者，它是一个 WebElement 对象，表示要在哪个元素上执行查找。
             element=element,
             timeout=timeout,
             period=period
@@ -555,7 +549,6 @@ class BaseWindow:
     #     self._driver.switch_to.window(self._driver.current_window_handle)
 
     def close(self) -> None:
-
         self._driver.quit()
 
     def get_window_rect(self) -> Dict[str, float]:

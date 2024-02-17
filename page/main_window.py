@@ -42,16 +42,13 @@ class MainWindow(BaseWindow):
                 selector=self._data['_device_list_selector'],
                 by=By.CSS_SELECTOR
             )
-
             for d in device_list:
                 device_name = self.get_element_text(
                     selector=self._data['_device_list_item_name'],
                     by=By.CSS_SELECTOR,
                     element=d
                 )
-
                 res.append(device_name)
-
             return res
         except BaseException as err:
             # self._logger.error('获取设备列表失败: ' + str(err))
@@ -173,10 +170,7 @@ class MainWindow(BaseWindow):
         """获取添加设备窗口"""
         return AddDeviceWindow(self._driver, self._driver.window_handles[1])
 
-    def get_device_status(
-            self,
-            name: str
-    ) -> str:
+    def get_device_status(self, name: str) -> str:
 
         _devices = set()
         try:
@@ -270,3 +264,19 @@ class MainWindow(BaseWindow):
         except BaseException as err:
             pass
             # self._logger.debug('唤醒设备错误: {}'.format(err))
+
+    def clear_all_devices(self):
+        try:
+            self.click_on_element(
+                selector=self._data['_clear_all_devices'],
+                by=By.CSS_SELECTOR
+            )
+            self.switch_to_window(common.EWindow.DEVICE)
+            self.click_on_element(
+                selector=self._data['_clear_all_device_confirm_btn'],
+                by=By.CSS_SELECTOR
+            )
+            self.switch_to_window(common.EWindow.MAIN)
+            return True
+        except BaseException as err:
+            return False, str(err)
